@@ -1,4 +1,11 @@
-import Node from '../node/node.js';
+export default class Node<T> {
+  value: T;
+  next: Node<T> | null = null;
+
+  constructor(value: T) {
+    this.value = value;
+  }
+}
 
 /**
  * Queue implementation using linked list.
