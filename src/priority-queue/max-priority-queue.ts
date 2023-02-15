@@ -53,7 +53,7 @@ export class MaxPriorityQueue<T extends Comparable> {
   private sink(ind: number): void {
     while (2 * ind <= this.n) {
       let childInd = ind * 2;
-      if (this.ar[childInd].compareTo(this.ar[childInd + 1]) < 0) { // exchanging parent with the biggest child
+      if (childInd < this.n && this.ar[childInd].compareTo(this.ar[childInd + 1]) < 0) { // exchanging parent with the biggest child
         childInd++;
       }
       if (this.ar[ind].compareTo(this.ar[childInd]) >= 0) {
